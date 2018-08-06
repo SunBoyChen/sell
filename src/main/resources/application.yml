@@ -1,0 +1,48 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    password: 123456
+    username: root
+    url: jdbc:mysql://192.168.25.138/sell?characterEncoding=utf-8&useSSL=false
+  jpa:
+      properties:
+        hibernate:
+          show_sql: true
+          format_sql: truee
+  jackson:
+    default-property-inclusion: non_null   #全局配置 null属性不返回
+  redis:
+    host: 192.168.25.138
+    port: 6379
+
+server:
+  context-path: /sell         #设置访问路径
+wechat:
+  #公众号
+  mpAppId: wxc23a7f4dbee63aba
+  mpAppSecret: 794696726e7f3495e9fa4e23aca0ded9
+  #开放平台
+  openAppId: wx6ad144e54af67d87
+  openAppSecret: 91a2ff6d38a2bbccfb7e9f9079108e2e
+  mchId: 1409146202
+  mchKey: c976503d34ca432c601361f969fd8d85
+  keyPath: /var/weixin_cert/h5.p12                    #退款证书路径
+  notifyUrl: http://sell.natapp4.cc/sell/pay/notify   #异步通知的地址
+  templateId:
+    orderStatus: e-Cqq67QxD6YNI41iRiqawEYdFavW_7pc7LyEMb-yeQ
+
+projectUrl:
+  wechatMpAuthorize: http://sell.natapp4.cc           #公众平台
+  wechatOpenAuthorize: http://sell.natapp4.cc         #开放平台
+
+logging:
+  level:
+    com.zhihua.sell.mapper.ProductCategoryMapper: trace
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
+
+
+
+
+
